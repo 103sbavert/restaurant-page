@@ -1,0 +1,107 @@
+:root
+{
+    --main-black: #1A1818;
+    --main-white: #fff7ed;
+    --dark-white: #e3cfb7;
+    --dark-orange: #973b14;
+    --medium-orange: #b64b1e;
+    --light-orange: #e16d36;
+    --title-font-size: calc(48px);
+    --subtitle-font-size: calc(26px);
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body
+{
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #1A1818;
+    color: var(--medium-orange);
+    padding: 0 max(12px, 20%);
+}
+
+header
+{   
+    width: 100%;
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    justify-self: center;
+    border-bottom: 1px var(--main-white) solid;
+}
+
+nav button.nav-button
+{
+    font-size: larger;
+    color: var(--main-white);
+    border: none;
+    background: none;
+}
+
+button.action-button
+{
+    font-size: larger;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 100vh;
+}
+
+button.action-button.primary
+{
+    background-color: var(--medium-orange);
+    color: var(--main-white);
+}
+
+button.action-button.secondary
+{
+    background-color: var(--main-white);
+    color: var(--main-black);
+}
+
+ul.nav-list
+{
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+div.content {
+    width: 50%;
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    align-items: start;
+    gap: 36px;
+    justify-content: center;
+}
+
+div.content > p {
+    padding: 0;
+    margin: 0;
+}
+
+p.home-title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: var(--title-font-size);
+    color: var(--main-white);
+}
+
+p.home-subtitle {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: var(--subtitle-font-size);
+    color: var(--dark-white);
+}
+
+div.home-action-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
