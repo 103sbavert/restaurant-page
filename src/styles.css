@@ -123,21 +123,21 @@ div.content > p
     margin: 0;
 }
 
-p.home-title
+p.page-title
 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: var(--title-font-size);
     color: var(--main-white);
 }
 
-p.home-subtitle
+p.page-subtitle
 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: var(--subtitle-font-size);
     color: var(--dark-white);
 }
 
-div.home-action-buttons
+div.page-action-buttons
 {
     display: flex;
     flex-direction: row;

@@ -1,24 +1,33 @@
 import "./styles.css"
+import { toggleClass, loadPageContent } from "./elements"
+import homePageContents from "./home"
 
-let selectedNavItemIndex = 0
-let navItemButtons = document.querySelectorAll(".nav-list > .nav-item > .nav-button")
+let selectedNavItem = 0
+document.querySelector(".nav-item.home").classList.add("selected")
+loadPageContent(homePageContents)
 
-function selectButton(event) {
-    let list = event.target.closest(".nav-list").children
-    let selected = event.target.closest(".nav-item")
-    let currentSelectedIndex = Array.from(list).indexOf(selected)
-    let prevSelected = list[selectedNavItemIndex]
+function navButtonCallback(event) {
+    let li_navItem = event.target.closest(".nav-item")
+    let siblings = li_navItem.parentElement.children
+    let currIndex = Array.from(siblings).indexOf(li_navItem)
 
-    prevSelected.classList.remove("selected")
-    selected.classList.add("selected")
+    if (currIndex == selectedNavItem) {
+        return
+    }
 
-    selectedNavItemIndex = currentSelectedIndex
+    toggleClass(siblings[selectedNavItem], "selected")
+    toggleClass(li_navItem, "selected")
+
+    switch (currIndex) {
+        case 0:
+            loadPageContent(homePageContents)
+    }
+
+    selectedNavItem = currIndex
 }
 
-for (let i = 0; i < navItemButtons.length; i++) {
-    let button = navItemButtons[i]
-    
-    button.addEventListener("click", selectButton)
+let button_navButtons = document.querySelectorAll("button.nav-button")
 
-    console.log(button)
-}
+button_navButtons.forEach(
+    (button) => button.addEventListener("click", navButtonCallback)
+)
