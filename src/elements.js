@@ -1,18 +1,3 @@
-export function loadPageContent(pageElements) {
-    for (let i = 0; i < pageElements.length; i++) {
-        let element = pageElements[i]
-
-        if (!(element instanceof HTMLElement)) {
-            return false
-        }
-    }
-
-    let contentContainer = document.querySelector("div.content")
-    contentContainer.replaceChildren()
-    insertElement(contentContainer, pageElements)
-    return true
-}
-
 export function createElement(emmet) {
     const validEmmetRe = /^[\w|\d]+(\.[\w|\d]+)*(#[\w|\d]+)?$/g
     const elementRe = /^(?<!\.)[\w|\d]+/
@@ -59,7 +44,7 @@ export function toggleClass(element, classNames) {
     return true
 }
 
-export function insertElement(parent, elements) {
+export function insertElements(parent, elements) {
     if (!(parent instanceof HTMLElement)) {
         return false
     }
@@ -72,7 +57,7 @@ export function insertElement(parent, elements) {
     for (let i = 0; i < elements.length; i++) {
         let elem = elements[i]
         let temp = elem instanceof Node
-        
+
         parent.appendChild(elem)
     }
 

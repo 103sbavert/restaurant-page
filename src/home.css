@@ -1,0 +1,47 @@
+div.home-page-override
+{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 36px;
+    justify-content: center;
+    padding: 5%;
+}
+
+p.home-title
+{
+    max-width: 40%;
+    font-family: "Caligna";
+    font-size: var(--page-heading-font-size);
+    color: var(--main-white);
+}
+
+p.home-subtitle
+{
+    max-width: 40%;
+    font-family: "Myriad Pro";
+    font-size: var(--page-subhead-font-size);
+    color: var(--dark-white);
+}
+
+div.home-action-buttons
+{
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
+
+img.background-illustration.home-img-override
+{
+    mask-image: radial-gradient(ellipse at center, var(--main-black) 0, transparent 70%);
+    content: url(images/home.png);
+    position: absolute;
+    left: none;
+    object-fit: fill;
+    right: 10%;
+    top: 50%;
+    width: 50%;
+    height: auto;
+    transform: translateY(-50%);
+    z-index: -1;
+}

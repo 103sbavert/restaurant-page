@@ -1,3 +1,15 @@
+@font-face
+{
+    font-family: "Myriad Pro";
+    src: url(./fonts/myriad-pro.otf);
+}
+
+@font-face
+{
+    font-family: "Caligna";
+    src: url(./fonts/caligna.ttf);
+}
+
 :root
 {
     --main-black: #1A1818;
@@ -6,81 +18,131 @@
     --dark-orange: #973b14;
     --medium-orange: #b64b1e;
     --light-orange: #e16d36;
-    --title-font-size: calc(48px);
-    --subtitle-font-size: calc(26px);
+    --title-font-size: 36px;
+    --nav-button-font-size: 24px;
+    --page-heading-font-size: 48px;
+    --page-subhead-font-size: 28px;
+    --page-caption-font-size: 24px;
+    --footer-text-font-size: 20px;
 
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    height: 100%;
 }
 
 body
 {
-    height: 100vh;
-    margin: 0;
+    height: 100%;
     display: flex;
     flex-direction: column;
     background-color: #1A1818;
-    color: var(--medium-orange);
-    padding: 0 max(12px, 20%);
+    padding: 0;
+    margin: 0 10%;
 }
 
 header
 {
-    width: 100%;
     display: flex;
-    flex: 0 1 auto;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     justify-self: center;
-    border-bottom: 1px var(--main-white) solid;
+    margin: 12px 0;
+}
+
+h1.restaurant-name
+{
+    font-size: var(--title-font-size);
+    font-family: "Myriad Pro";
+    color: var(--light-orange);
+    flex: 1 0 max-content;
 }
 
 nav
 {
-    height: 100%;
-}
-
-.nav-list
-{
-    height: 100%;
-    padding: 0;
-    margin: auto;
-}
-
-.nav-item
-{
-    height: calc(100% - 24px);
-    margin: 12px 0;
-}
-
-.nav-button
-{
-    height: 100%;
+    height: 50px;
     display: block;
-    font-size: larger;
+    flex: 1 1 auto;
+}
+
+ul.nav-list
+{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    align-items: center;
+    justify-content: end;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li.nav-item
+{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+button.nav-button
+{
+
+    display: block;
+    font-family: "Myriad Pro";
+    font-size: var(--nav-button-font-size);
     color: var(--main-white);
+    align-self: center;
+    flex: 1 0 100%;
     border: none;
     background: none;
 }
 
-nav .nav-item.selected
+.selected button.nav-button
 {
     color: var(--light-orange);
-    border-bottom: 2px solid var(--dark-orange);
 }
 
-nav .nav-item:hover
+li:hover button.nav-button {
+    color: var(--main-white)
+}
+
+li:hover
 {
-    color: var(--dark-white);
-    background-color: color-mix(in srgb, var(--dark-white) 10%, #fff2 100%);
+    background: radial-gradient(circle at center, var(--dark-orange) 0, transparent 60%);
 }
 
+.selected hr.selection-indicator
+{
+    visibility: unset;
+}
+
+hr.selection-indicator
+{
+    visibility: hidden;
+    width: 100%;
+    flex: 1 0 4px;
+    background-color: var(--medium-orange);
+    border: none;
+    border-radius: 100vh;
+    margin: 0;
+    align-self: center;
+}
+
+
+hr.header-underline, hr.footer-overline
+{
+    height: 2px;
+    background-color: var(--main-white);
+    border: none;
+    margin: 0;
+}
 
 button.action-button
 {
     font-size: larger;
     padding: 8px 16px;
     border: none;
+    font-family: "Myriad Pro";
     border-radius: 100vh;
 }
 
@@ -96,26 +158,16 @@ button.action-button.secondary
     color: var(--main-black);
 }
 
-ul.nav-list
+button.action-button.primary:hover
 {
-    display: flex;
-    flex-direction: row;
-    gap: 32px;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
+    background-color: var(--dark-orange);
 }
 
-div.content
+button.action-button.secondary:hover
 {
-    width: 50%;
-    display: flex;
-    flex: 1 0 auto;
-    flex-direction: column;
-    align-items: start;
-    gap: 36px;
-    justify-content: center;
+    background-color: var(--dark-white);
 }
+
 
 div.content > p
 {
@@ -123,23 +175,13 @@ div.content > p
     margin: 0;
 }
 
-p.page-title
+div.content
 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: var(--title-font-size);
+    flex: 1 0 auto;
+}
+
+p.footer-quote {
     color: var(--main-white);
-}
-
-p.page-subtitle
-{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: var(--subtitle-font-size);
-    color: var(--dark-white);
-}
-
-div.page-action-buttons
-{
-    display: flex;
-    flex-direction: row;
-    gap: 32px;
+    font-family: "Myriad Pro";
+    font-size: var(--footer-text-font-size);
 }
