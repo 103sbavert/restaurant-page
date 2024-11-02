@@ -1,9 +1,11 @@
 import "./styles.css"
 
-import homePageContent from "./home"
-import menuPageContent from "./menu"
-import { img_backgroundIllustration as menuPage_backgroundIllustration } from "./menu"
-import { img_backgroundIllustration as homePage_backgroundIllustration } from "./home"
+import homePageContent from "./home/home"
+import menuPageContent from "./menu/menu"
+import aboutPageContent from "./about/about"
+import { img_backgroundIllustration as menuPage_backgroundIllustration } from "./menu/menu"
+import { img_backgroundIllustration as homePage_backgroundIllustration } from "./home/home"
+import { img_backgroundIllustration as aboutPage_backgroundIllustration } from "./about/about"
 
 class NavItemHolder {
     constructor(navItem, pageContent, backgroundIllustration) {
@@ -16,7 +18,7 @@ class NavItemHolder {
 let pageList = [
     new NavItemHolder(document.querySelector("li.nav-item:nth-child(1)"), homePageContent, homePage_backgroundIllustration),
     new NavItemHolder(document.querySelector("li.nav-item:nth-child(2)"), menuPageContent, menuPage_backgroundIllustration),
-    new NavItemHolder(document.querySelector("li.nav-item:nth-child(3)"), null, null)
+    new NavItemHolder(document.querySelector("li.nav-item:nth-child(3)"), aboutPageContent, aboutPage_backgroundIllustration)
 ]
 
 let selectedNavItem = 0

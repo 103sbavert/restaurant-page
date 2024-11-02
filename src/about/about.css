@@ -1,0 +1,49 @@
+:root
+{
+    --restaurant-photo-polygon: polygon(50% 0, 100% 38%, 100% 100%, 0% 100%, 0 38%);
+    --restaurant-photo-gradient: radial-gradient(circle at center, var(--main-black) 50%, transparent 100%);
+    --page-title-bg-gradient: radial-gradient(circle at center, var(--dark-orange) 0, transparent 10%);
+}
+
+img.restaurant-photo
+{
+    height: 500px;
+    width: 500px;
+    mask-image: var(--restaurant-photo-gradient);
+    clip-path: var(--restaurant-photo-polygon);
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+div.content.about-page-override
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    align-items: flex-end;
+    padding: 0 10% 0 0;
+}
+
+h1.about-title
+{
+    background: var(--page-title-bg-gradient);
+    text-decoration: underline;
+    width: 40%;
+    text-align: center;
+    font-family: "Caligna";
+    font-size: var(--page-heading-font-size);
+    color: var(--main-white);
+}
+
+p.about-text
+{
+    width: 40%;
+    font-family: "Myriad Pro";
+    font-size: var(--page-subhead-font-size);
+    color: var(--dark-white);
+    text-align: center;
+}

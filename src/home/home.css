@@ -5,10 +5,10 @@ div.home-page-override
     align-items: start;
     gap: 36px;
     justify-content: center;
-    padding: 5%;
+    padding: 0 0 0 10%;
 }
 
-p.home-title
+h1.home-title
 {
     max-width: 40%;
     font-family: "Caligna";
@@ -34,7 +34,6 @@ div.home-action-buttons
 img.background-illustration.home-img-override
 {
     mask-image: radial-gradient(ellipse at center, var(--main-black) 0, transparent 70%);
-    content: url(images/home.png);
     position: absolute;
     left: none;
     object-fit: fill;

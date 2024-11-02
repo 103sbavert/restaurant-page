@@ -1,9 +1,9 @@
-import { createElement, insertElements } from "./elements";
-import mainDish from "./images/main-dish.png"
-import food1 from "./images/food1.png"
-import food2 from "./images/food2.png"
-import food3 from "./images/food3.png"
-import food4 from "./images/food4.png"
+import { createElement, insertElements } from "../elements";
+import mainDish from "../images/main-dish.png"
+import food1 from "../images/food1.png"
+import food2 from "../images/food2.png"
+import food3 from "../images/food3.png"
+import food4 from "../images/food4.png"
 import "./menu.css"
 
 let div_content = createElement("div.content.menu-page-override")
@@ -38,12 +38,12 @@ for (let i = 0; i < div_menuItems.length; i++) {
         case 1:
             img_itemPicture.src = food2
             div_itemName.append("Shahi Paneer")
-            div_itemPrice.append("$2.50")
+            div_itemPrice.append("$5.00")
             break
         case 2:
             img_itemPicture.src = mainDish
             div_itemName.append("Butter Chicken")
-            div_itemPrice.append("$10.00")
+            div_itemPrice.append("$15.00")
             break
         case 3:
             img_itemPicture.src = food3
