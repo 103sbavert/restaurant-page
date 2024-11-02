@@ -1,5 +1,9 @@
 import { createElement, insertElements } from "./elements";
-import backgroundImage from "./images/menu.png"
+import mainDish from "./images/main-dish.png"
+import food1 from "./images/food1.png"
+import food2 from "./images/food2.png"
+import food3 from "./images/food3.png"
+import food4 from "./images/food4.png"
 import "./menu.css"
 
 let div_content = createElement("div.content.menu-page-override")
@@ -21,14 +25,33 @@ let div_menuItems = [
 
 for (let i = 0; i < div_menuItems.length; i++) {
     let img_itemPicture = createElement("img.item-picture")
-    img_itemPicture.src = backgroundImage
-
     let div_itemLabel = createElement("div.item-label")
-
-    let div_itemPrice = createElement("div.item-price")
-    div_itemPrice.append("$0")
     let div_itemName = createElement("div.item-name")
-    div_itemName.append("Food Name")
+    let div_itemPrice = createElement("div.item-price")
+
+    switch (i) {
+        case 0:
+            img_itemPicture.src = food1
+            div_itemName.append("Paneer Chawal (Rice)")
+            break
+        case 1:
+            img_itemPicture.src = food2
+            div_itemName.append("Shahi Paneer")
+            break
+        case 2:
+            img_itemPicture.src = mainDish
+            div_itemName.append("Butter Chicken")
+            break
+        case 3:
+            img_itemPicture.src = food3
+            div_itemName.append("Chicken Biryani")
+            break
+        case 4:
+            img_itemPicture.src = food4
+            div_itemName.append("Samosas")
+            break;
+    }
+    div_itemPrice.append("$4.00")
 
     insertElements(div_itemLabel, [div_itemName, div_itemPrice])
 

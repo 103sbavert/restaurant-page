@@ -4,6 +4,7 @@ div.menu-item
     display: flex;
     flex-direction: column;
     place-self: center;
+    gap: 36px;
     grid-row: 2 / 3;
 }
 
@@ -25,10 +26,10 @@ div.item-label
 
 img.item-picture
 {
-    width: 100%;
+    width: fit-content;
+    max-width: 100%;
     place-self: center;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 div.content.menu-page-override
