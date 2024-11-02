@@ -32,26 +32,30 @@ for (let i = 0; i < div_menuItems.length; i++) {
     switch (i) {
         case 0:
             img_itemPicture.src = food1
-            div_itemName.append("Paneer Chawal (Rice)")
+            div_itemName.append("Rajma Chawal (Rice)")
+            div_itemPrice.append("$4.00")
             break
         case 1:
             img_itemPicture.src = food2
             div_itemName.append("Shahi Paneer")
+            div_itemPrice.append("$2.50")
             break
         case 2:
             img_itemPicture.src = mainDish
             div_itemName.append("Butter Chicken")
+            div_itemPrice.append("$10.00")
             break
         case 3:
             img_itemPicture.src = food3
             div_itemName.append("Chicken Biryani")
+            div_itemPrice.append("$7.50")
             break
         case 4:
             img_itemPicture.src = food4
             div_itemName.append("Samosas")
+            div_itemPrice.append("$3.00")
             break;
     }
-    div_itemPrice.append("$4.00")
 
     insertElements(div_itemLabel, [div_itemName, div_itemPrice])
 
